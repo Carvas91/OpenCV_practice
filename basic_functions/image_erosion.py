@@ -18,9 +18,15 @@ imgCanny = cv2.Canny(image, threshold1=t_lower, threshold2=t_higher)
 
 imgDialation = cv2.dilate(imgCanny, kernel, iterations=1)
 
+#img erosion
 
-cv2.imshow("original img",image)
 
-cv2.imshow('Canny Dialation', imgDialation)
+imgErosion = cv2.erode(imgDialation, kernel, iterations=1)
+
+cv2.imshow('Original', imgCanny)
+
+cv2.imshow("Dialates",imgDialation)
+
+cv2.imshow('Eroded', imgErosion)
 
 cv2.waitKey(0)
